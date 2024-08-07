@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introduction to Year 12 A Level studies" />
+    <title>Intro to Year 12 - A Level Revision</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">A Level Revision</a>
+            <div class="toggle-button" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar__menu">
+                <a href="maths.html" class="navbar__links">Maths & Further Maths</a>
+                <a href="physics.html" class="navbar__links">Physics</a>
+                <a href="chemistry.html" class="navbar__links">Chemistry</a>
+                <a href="intro-to-y12.html" class="navbar__links">Intro to Y12</a>
+                <a href="forum.html" class="navbar__links">Forum</a>
+                <a href="oxbridge.html" class="navbar__links">Oxbridge/UCAS</a>
+            </div>
+            <img src="dark-mode.png" id="dark-mode-toggle" alt="Toggle Dark Mode" class="dark-mode-icon">
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1>Introduction to Year 12</h1>
+            <p>Getting started with your Year 12 A Level studies?<p>
+            </p> Understand the key areas to focus on, find study tips, and prepare yourself for a successful year ahead.</p>
+        </div>
+    </section>
+
+    <!-- Intro to Year 12 Section -->
+    <section class="section intro-to-yr12-container">
+        <h2>Getting Started</h2>
+        <p>Learn how to navigate through Year 12. This section includes tips for managing your workload and advice on making the most of your A Level experience.</p>
+        <p>We will cover the following main topics:</p>
+        <p> </p>
+        <div class="resources-boxes">
+            <div class="resources-box">
+                <p><strong>General Advice:</strong></p>
+                <ul>
+                    <li>Stay organised by keeping all your notes in one place. This way, you won't be scrambling to find important notes the day before your A-level exam!</li>
+                    <li>Spend Year 12 making reusable revision resources (e.g cue cards). It makes Year 13 so much easier. These are best done on a computer and backed up online.</li>
+                </ul>
+            </div>
+            <div class="resources-box">
+                <p><strong>Note taking applications/devices:</strong></p>
+                <ul>
+                    <li>Textbook 1</li>
+                    <li>Textbook 2</li>
+                </ul>
+            </div>
+            <div class="resources-box">
+                <p><strong>How your teachers can help You:</strong></p>
+                <ul>
+                    <li>Test 1</li>
+                    <li>Test 2</li>
+                </ul>
+            </div>
+            <div class="resources-box">
+                <p><strong>How to manage your time:</strong></p>
+                <ul>
+                    <li>Group 1</li>
+                    <li>Forum 1</li>
+                </ul>
+            </div>
+            <div class="resources-box">
+                <p><strong>How to manage your time:</strong></p>
+                <ul>
+                    <li>Group 1</li>
+                    <li>Forum 1</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2024 A Level Revision. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.querySelector('#mobile-menu');
+            const menuLinks = document.querySelector('.navbar__menu');
+            const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+            // Toggle mobile menu
+            menu.addEventListener('click', function() {
+                menuLinks.classList.toggle('active');
+            });
+
+            // Toggle dark mode
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+            }
+
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+
+            // Apply dark mode state from localStorage
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>

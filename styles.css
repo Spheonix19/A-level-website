@@ -1,0 +1,555 @@
+/* Reset some default styles */
+body, h1, h2, p, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body prevents horizontal overflow */
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  padding-bottom: 100px; /* Space for footer */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #ff4c4c;
+  color: #ffffff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar is above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for visibility */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Navbar container */
+.navbar__container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center the navbar container */
+  flex-wrap: nowrap; /* Prevent wrapping of navbar items */
+  padding-left: 2rem; /* Adjust padding to create space from the left edge */
+  padding-right: 2rem; /* Ensure there's padding on the right as well */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Navbar logo */
+#navbar__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: auto; /* Pushes menu to the left */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Navbar spacer to control dark mode icon position */
+.navbar__spacer {
+  flex-grow: 1; /* Take up remaining space between menu items */
+}
+
+/* Intro Container Styles */
+.intro-container {
+  padding: 2rem;
+  margin: 1.5rem auto;
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.intro-container h2 {
+  color: #ff4c4c;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.intro-container p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.resources-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.resources-box {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin: 0.5rem;
+  text-align: left;
+  min-width: 250px;
+}
+
+.resources-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.resources-box p {
+  font-weight: bold;
+  color: #ff4c4c;
+  font-size: 1.25rem;
+}
+
+.resources-box ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.resources-box ul li {
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-size: 1.125rem;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .intro-container {
+  background-color: #333333;
+  border-color: #c77777;
+}
+
+body.dark-mode .resources-box {
+  background-color: #444444;
+  border-color: #c77777;
+  color: #ffffff;
+}
+
+body.dark-mode .resources-box p {
+  color: #c77777;
+}
+
+body.dark-mode .resources-box ul li {
+  color: #ffffff;
+}
+
+/* Intro Box Styles */
+.intro-box {
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #ffe6e6;
+  color: #333;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.intro-box ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.intro-box ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Dark Mode Styles for Intro Box */
+body.dark-mode .intro-box {
+  background-color: #555;
+  color: #fff;
+  border-color: #c77777;
+}
+
+body.dark-mode .intro-box ul li {
+  color: #fff;
+}
+
+/* Dark Mode Icon */
+#dark-mode-toggle {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 1rem; /* Ensure there's space between the menu and the dark mode icon */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Smooth background and border transition */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Navbar menu */
+.navbar__menu {
+  display: flex;
+  align-items: center; /* Center menu items vertically */
+  flex-wrap: nowrap; /* Prevent wrapping of menu items */
+  gap: 1rem;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Navbar links */
+.navbar__links {
+  color: #ffffff;
+  text-decoration: none; /* Remove underline */
+  font-weight: 700;
+  transition: color 0.3s ease; /* Smooth color transition */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Navbar link hover effect */
+.navbar__links:hover,
+#navbar__logo:hover {
+  color: #000000; /* Change text color to black on hover */
+}
+
+/* Toggle button */
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1002; /* Ensure toggle button is above other content */
+  margin-left: auto; /* Pushes toggle button to the right */
+}
+
+/* Toggle button bars */
+.toggle-button .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .navbar {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .navbar__links,
+body.dark-mode #navbar__logo {
+  color: #ffffff;
+}
+
+body.dark-mode .navbar__links:hover,
+body.dark-mode #navbar__logo:hover {
+  color: #aaaaaa;
+}
+
+body.dark-mode .hero {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .section {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+body.dark-mode .section h2 {
+  color: #c77777; /* Change heading color */
+}
+
+body.dark-mode .section-link {
+  background-color: #555555;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+body.dark-mode .section-link:hover {
+  background-color: #777777;
+}
+
+body.dark-mode .newsletter {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+body.dark-mode .newsletter h2 {
+  color: #c77777; /* Change heading color */
+}
+
+body.dark-mode .newsletter__input {
+  background-color: #555555;
+  color: #ffffff;
+  border-color: #777777;
+}
+
+body.dark-mode .newsletter__button {
+  background-color: #777777;
+  color: #ffffff;
+}
+
+body.dark-mode .newsletter__button:hover {
+  background-color: #999999;
+}
+
+body.dark-mode .footer {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Add the following rule to apply the background color and outline to the dark mode icon */
+body.dark-mode #dark-mode-toggle {
+  background-color: #c77777; /* Background color */
+  border: 2px solid #ffffff; /* Outline color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: calc(100% - 2rem); /* Subtract space for padding */
+    position: absolute;
+    top: 100%;
+    left: 1rem; /* Add space from the left edge */
+    right: 1rem; /* Add space from the right edge */
+    background-color: #ff4c4c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    z-index: 1000; /* Ensure menu is above other content */
+    overflow: hidden; /* Prevent overflow */
+    padding: 1rem; /* Space around the content */
+    border-radius: 8px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+    animation: dropdown-slide 0.5s ease; /* Add slide down animation */
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .navbar__links {
+    display: block; /* Ensure links stack vertically */
+    padding: 1rem;
+    color: #ffffff;
+    text-decoration: none; /* Remove underline */
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color transition */
+    border-radius: 4px; /* Rounded corners for each link */
+    margin-bottom: 0.5rem; /* Space between links */
+  }
+
+  .navbar__links:hover {
+    background-color: #e03d3d; /* Slightly different hover color */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  /* Dark mode styles for mobile menu */
+  body.dark-mode .navbar__menu {
+    background-color: #333333;
+  }
+
+  body.dark-mode .navbar__links {
+    color: #ffffff;
+  }
+
+  body.dark-mode .navbar__links:hover {
+    background-color: #555555;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background-color: #ff4c4c;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Hero content */
+.hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Hero text styling */
+.hero__content h1, 
+.hero__content p {
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Hover effect for hero section */
+.hero:hover .hero__content h1, 
+.hero:hover .hero__content p {
+  color: #000000; /* Change text color to black on hover */
+}
+
+/* Section Styles */
+.section {
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative; /* Ensure sections are not affected by z-index issues */
+}
+
+/* Hover effect for sections */
+.section:hover {
+  background-color: #ffe6e6;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.section h2 {
+  color: #ff4c4c;
+  margin-bottom: 0.5rem;
+}
+
+/* Combined Section */
+.combined {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section links */
+.section-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: 1px solid #ff4c4c;
+  border-radius: 4px;
+  background-color: #ff4c4c;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-link:hover {
+  background-color: #ffffff;
+  color: #ff4c4c;
+}
+
+/* Newsletter Styles */
+.newsletter {
+  background-color: #ff4c4c;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.newsletter__input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333333;
+  width: 100%;
+  max-width: 300px;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter__input:focus {
+  border-color: #ffcccc;
+  outline: none;
+}
+
+.newsletter__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #ff4c4c;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter__button:hover {
+  background-color: #ffe6e6;
+  color: #ff4c4c;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #ff4c4c;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed; /* Ensure footer is always at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; /* Ensure footer is above other content */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .section {
+    padding: 1rem;
+    margin: 0.5rem 1rem; /* Add margin to ensure gap from the edges */
+  }
+
+  .newsletter {
+    padding: 1.5rem;
+  }
+
+  .footer {
+    position: fixed; /* Remove fixed positioning */
+  }
+}
+
+/* Ensure the user can zoom out on mobile devices */
+@viewport {
+  zoom: 1.0;
+  width: device-width;
+}
+
+/* Add viewport meta tag for zoom capabilities */
+@media (max-width: 768px) {
+  meta[name="viewport"] {
+    content: 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes';
+  }
+}
+
+/* Keyframes for dropdown animation */
+@keyframes dropdown-slide {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

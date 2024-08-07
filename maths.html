@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Maths & Further Maths revision resources for A Levels" />
+    <title>Maths & Further Maths - A Level Revision</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">A Level Revision</a>
+            <div class="toggle-button" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar__menu">
+                <a href="maths.html" class="navbar__links">Maths & Further Maths</a>
+                <a href="physics.html" class="navbar__links">Physics</a>
+                <a href="chemistry.html" class="navbar__links">Chemistry</a>
+                <a href="intro-to-y12.html" class="navbar__links">Intro to Y12</a>
+                <a href="forum.html" class="navbar__links">Forum</a>
+                <a href="oxbridge.html" class="navbar__links">Oxbridge/UCAS</a>
+            </div>
+            <img src="dark-mode.png" id="dark-mode-toggle" alt="Toggle Dark Mode" class="dark-mode-icon">
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1>Maths & Further Maths</h1>
+            <p>Explore a comprehensive set of resources for Maths and Further Maths. Dive into detailed notes, practice problems, and study guides to enhance your understanding and performance.</p>
+        </div>
+    </section>
+
+    <!-- Maths Resources Section -->
+    <section class="section">
+        <h2>Maths Resources</h2>
+        <p>Find study materials, revision notes, and practice exercises for A Level Maths. These resources are designed to help you master key concepts and excel in your exams.</p>
+        <a href="Maths-Resources.html" class="section-link">Explore Maths Resources</a>
+    </section>
+
+    <!-- Further Maths Resources Section -->
+    <section class="section">
+        <h2>Further Maths Resources</h2>
+        <p>Access comprehensive resources for Further Maths. Get detailed explanations, problem sets, and study aids to support your advanced studies.</p>
+        <a href="Further-Maths-Resources.html" class="section-link">Explore Further Maths Resources</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2024 A Level Revision. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.querySelector('#mobile-menu');
+            const menuLinks = document.querySelector('.navbar__menu');
+            const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+            // Toggle mobile menu
+            menu.addEventListener('click', function() {
+                menuLinks.classList.toggle('active');
+            });
+
+            // Toggle dark mode
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+            }
+
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+
+            // Apply dark mode state from localStorage
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>

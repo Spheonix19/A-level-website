@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="description" content="A Level Revision Website - Maths, Further Maths, Physics, Chemistry, and Oxbridge resources" />
+    <title>A Level Revision</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">A Level Revision</a>
+            <div class="navbar__menu">
+                <a href="maths.html" class="navbar__links">Maths & Further Maths</a>
+                <a href="physics.html" class="navbar__links">Physics</a>
+                <a href="chemistry.html" class="navbar__links">Chemistry</a>
+                <a href="intro-to-y12.html" class="navbar__links">Intro to Y12</a>
+                <a href="forum.html" class="navbar__links">Forum</a>
+                <a href="oxbridge.html" class="navbar__links">Oxbridge/UCAS</a>
+            </div>
+            <img src="dark-mode.png" id="dark-mode-toggle" alt="Toggle Dark Mode" class="dark-mode-icon">
+            <div class="toggle-button" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__content">
+                <h1>Welcome to Your A Level Revision Hub!</h1>
+                <p>Get ready to ace your exams with our comprehensive resources.</p>
+            </div>
+        </section>
+        <!-- Individual Subject Sections -->
+        <section id="intro-to-y12" class="section">
+            <h2>Intro to Y12</h2>
+            <p>Get an overview of what to expect in Year 12. Find resources and advice to help you transition smoothly into the new academic year.</p>
+            <a href="intro-to-y12.html" class="section-link">Explore Intro to Y12</a>
+        </section>
+        <section id="maths-further-maths" class="section combined">
+            <h2>Maths & Further Maths</h2>
+            <p>Explore resources and revision materials for Maths and Further Maths. Prepare comprehensively with detailed notes, practice questions, and more.</p>
+            <p> Obtain subject specific advise tailored for students.</p>
+            <a href="maths.html" class="section-link">Explore Maths & Further Maths</a>
+        </section>
+
+        <!-- Individual Subject Sections -->
+        <section id="physics" class="section">
+            <h2>Physics</h2>
+            <p>Access study guides and practice problems for Physics. Get all the support you need to understand key concepts and excel in your exams.</p>
+            <p> Obtain subject specific advise tailored for students.</p>
+            <a href="physics.html" class="section-link">Explore Physics</a>
+        </section>
+        
+        <section id="chemistry" class="section">
+            <h2>Chemistry</h2>
+            <p>Review Chemistry concepts and solve practice questions. Enhance your understanding with our targeted revision materials and resources.</p>
+            <p> Obtain subject specific advise tailored for students.</p>
+            <a href="chemistry.html" class="section-link">Explore Chemistry</a>
+        </section>
+        <section id="oxbridge" class="section">
+            <h2>Oxbridge/UCAS</h2>
+            <p>Prepare for Oxbridge entrance exams with targeted resources. Find expert advice and comprehensive study guides to help you succeed.</p>
+            <a href="oxbridge.html" class="section-link">Explore Oxbridge</a>
+        </section>
+        <section id="forum" class="section">
+            <h2>Forum</h2>
+            <p>Join our forum to discuss A Level topics, share resources, and get advice from fellow students and experts.</p>
+            <a href="forum.html" class="section-link">Visit Forum</a>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h2>Sign Up for Our Newsletter</h2>
+            <p>Stay updated with the latest news and updates on A Level revision resources by signing up for our newsletter.</p>
+            <form action="subscribe.php" method="POST" class="newsletter__form">
+                <input type="email" name="email" placeholder="Enter your email" required class="newsletter__input" />
+                <button type="submit" class="newsletter__button">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2024 A Level Revision. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.querySelector('#mobile-menu');
+            const menuLinks = document.querySelector('.navbar__menu');
+            const darkModeToggle = document.querySelector('#dark-mode-toggle');
+            const body = document.body;
+
+            // Toggle mobile menu
+            menu.addEventListener('click', function() {
+                menuLinks.classList.toggle('active');
+            });
+
+            // Toggle dark mode
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDarkMode = body.classList.contains('dark-mode');
+                localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+            });
+
+            // Apply dark mode state from localStorage
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>
