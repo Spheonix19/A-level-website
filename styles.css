@@ -452,6 +452,22 @@ body.dark-mode #dark-mode-toggle {
   color: #ffffff;
   padding: 2rem;
   text-align: center;
+  border-radius: 8px; /* Added rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth effect */
+}
+
+.newsletter:hover {
+  background-color: #e03d3d; /* Darker shade on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Added shadow on hover */
+}
+
+.newsletter h2, .newsletter p {
+  transition: color 0.3s ease; /* Added transition for text color */
+}
+
+.newsletter:hover h2, .newsletter:hover p {
+  color: #000000; /* Change text color to black on hover */
 }
 
 .newsletter__form {
@@ -470,28 +486,37 @@ body.dark-mode #dark-mode-toggle {
   color: #333333;
   width: 100%;
   max-width: 300px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effect */
 }
 
 .newsletter__input:focus {
   border-color: #ffcccc;
   outline: none;
+  box-shadow: 0 0 10px rgba(255, 204, 204, 0.5); /* Added shadow on focus */
 }
 
 .newsletter__button {
-  padding: 0.5rem 1rem;
-  border: none;
+  padding: 0.75rem 1.5rem; /* Increased padding for larger button */
+  border: 2px solid #ff4c4c; /* Added border */
   border-radius: 4px;
   background-color: #ffffff;
   color: #ff4c4c;
   font-weight: 700;
+  font-size: 1.125rem; /* Increased font size */
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transition for smooth effect */
 }
 
 .newsletter__button:hover {
   background-color: #ffe6e6;
   color: #ff4c4c;
+  transform: scale(1.1) rotate(3deg); /* Slight zoom and rotation on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Added shadow on hover */
+}
+
+.newsletter__button:active {
+  transform: scale(0.95); /* Slightly reduce size on click */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Reduced shadow on click */
 }
 
 /* Footer Styles */
